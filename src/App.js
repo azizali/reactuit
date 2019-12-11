@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Wrapper from './Wrapper'
+import Greeting from './Greeting'
+// Just a function that return a user interface
+// Component name should be Capitalized
+// User interface HTML
+// Import React library
+// Always ONE parent element
+function App(){
+  const name = "Intuit Team"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>Hello world, some more text, Test again</div>
+      <hr />
+      <Wrapper></Wrapper>
+      <hr />
+      <Greeting
+        personName={name}
+        personAge={12}
+        doSomething={()=>{
+          // alert('hello')
+          return <div>Did something</div>
+        }}
+        locations={['Chicago', 'San Diego', 'NYC']}
+        options={{
+          employeeCount: 1000,
+          numberOfCustomers: Infinity
+        }}
+      />
     </div>
-  );
+  )
 }
+// Default export
+// export default App
 
-export default App;
+// // Named export
+export { App }
