@@ -1,21 +1,13 @@
 import './style.css'
 import React from 'react';
+import Button from './Button'
 
 function App(){
   return (
     <>
-      <div style={{
-        backgroundColor: 'red',
-        color: 'white'
-      }}>
-        This is a React box 1
-      </div>
-      <div className="boxy">
-        This is a React box 2
-      </div>
-      <div className="boxy2">
-        This is a React box 3
-      </div>
+      <Button value="Traditional Button" />
+      <Button type="anchor" to="https://google.com" value="Anchor link" />
+      <Button type="submit" value="Submit button" />
     </>
   )
 }
