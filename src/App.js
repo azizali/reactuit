@@ -7,12 +7,22 @@ import Greeting from './Greeting'
 // Import React library
 // Always ONE parent element
 function App(){
+  // If you want to render based on multiple conditions
+  function shouldRender (isLoading, hasData){
+    return true || false
+  }
+  const isLoading = true
   const name = "Intuit Team"
   return (
-    <div>
+    <> 
+      {shouldRender() && <div>Loading...</div>}
       <div>Hello world, some more text, Test again</div>
       <hr />
-      <Wrapper></Wrapper>
+      {!shouldRender() && <Wrapper />}
+      <br/>
+      {!shouldRender() && <Wrapper>
+        information, data
+      </Wrapper>}
       <hr />
       <Greeting
         personName={name}
@@ -27,7 +37,7 @@ function App(){
           numberOfCustomers: Infinity
         }}
       />
-    </div>
+    </>
   )
 }
 // Default export

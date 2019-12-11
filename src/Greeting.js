@@ -14,6 +14,7 @@ import React from 'react';
 // // 
 // const { name, hobbies, skills } = user
 
+// Props immutable properties
 export default function Greeting({
   doSomething,
   personName,
